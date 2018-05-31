@@ -10,4 +10,18 @@ function sayDownFrom(n) {
 
 sayDownFrom(5);
 
+let counter = 5;
+let mem = {};
 // Function called sumUpToFive that adds up all of the number up to five.
+
+function sumUpToFive(n) {
+  if ( n > 1 ) {
+    mem[n] = (n - 1) + n;
+    sumUpToFive(n - 1) + n;
+  } else {
+    console.log(mem);
+    return true;
+  }
+}
+
+sumUpToFive(5);
