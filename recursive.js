@@ -16,10 +16,8 @@ let mem = {};
 
 function sumUpToFive(n) {
   if ( n > 1 ) {
-    mem[n] = (n - 1) + n;
     sumUpToFive(n - 1) + n;
   } else {
-    console.log(mem);
     return true;
   }
 }
