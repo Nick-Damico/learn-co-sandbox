@@ -74,4 +74,4 @@ first_transaction.addItems('apple computer', 500, 2);
 first_transaction.addItems('toothbrush', 3.00, 5);
 first_transaction.addItems('puppies', 20, 3);
 console.log(first_transaction.voidLastTransaction());
-console.log(first_transaction.applyDiscount());
+
