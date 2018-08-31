@@ -19,6 +19,15 @@ class Artist {
     }
   }
   
+  addSongByName(name,genre) {
+    let new_song = new Song(name,genre);
+    if(!this.getSongs().includes(new_song)) {
+      this.addSong(new_song);
+    } else {
+      console.warn("Sorry Song was already added.");
+    }
+  }
+  
   getSongs() {
     return this._songs;
   }
@@ -43,7 +52,6 @@ class Song {
   }
   
   setArtist(artist) {
-    
     this._artist = artist;
   }
   
@@ -51,17 +59,20 @@ class Song {
     return this._artist;
   }
   
+  artistName() {
+    return this._artist._name
+  }
+  
 }
 
 let drake = new Artist('Drake');
-console.log(drake.getName());
 
 let hotlineBling = new Song('Hotline Bling', 'Rap');
-let fireworks = new Song('Fireworks', 'R&B');
+// let fireworks = new Song('Fireworks', 'R&B');
 
 hotlineBling.setArtist(drake);
 
+drake.addSongByName('Fireworks', 'R&B');
 drake.addSong(hotlineBling);
-drake.addSong(fireworks);
-console.log(`Artist of ${hotlineBling.getTitle()}: ${fireworks.getArtist().getName()}`);
+console.log(hotlineBling.artistName());
 drake.listSongs();
